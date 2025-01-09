@@ -1,0 +1,9 @@
+services:
+  server:
+    container_name: ${APP_NAME}
+    build:
+      context: .
+    ports:
+      - "9000:80"
+    volumes:
+      - ./src:/var/www/html/WebRoot
