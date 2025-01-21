@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.3-apache
 
 WORKDIR /var/www/html/
 
@@ -11,9 +11,10 @@ tar \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
-RUN curl -fSL https://raw.githubusercontent.com/yiisoft-contrib/museum/master/files/yii-1.0rc.r187.tar.gz -o yii.tar.gz
+RUN curl -fSL https://github.com/yiisoft/yii/releases/download/1.1.22/yii-1.1.22.bf1d26.tar.gz -o yii.tar.gz
 
-RUN tar -xzf yii.tar.gz
+RUN tar --strip-components=1 -xzf yii.tar.gz -C /var/www/html/
+RUN rm yii.tar.gz
 
 EXPOSE 80
 
