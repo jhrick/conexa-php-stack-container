@@ -7,3 +7,4 @@ services:
       - "9000:80"
     volumes:
       - ./src:/var/www/html/WebRoot
+    user: "1000:1000"
