@@ -19,8 +19,11 @@ RUN rm yii.tar.gz
 RUN chown -R www-data:www-data /var/www/html/ && \
     chmod -R 755 /var/www/html/
 
-COPY new.sh /var/www/html/
 COPY 000-default.conf /etc/apache2/sites-available/
+
+COPY yii.sh /usr/bin/
+RUN chmod +x /usr/bin/yii.sh
+RUN echo "alias yii=yii.sh" >> ~/.bashrc
 
 RUN a2enmod rewrite
 
