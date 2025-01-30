@@ -7,3 +7,4 @@ services:
       - "9000:80"
     volumes:
       - ./src:/var/www/html/WebRoot:rw
+      - ./yii:/var/www/html/yii:ro

@@ -1,4 +1,5 @@
 .env
+yii/
 
-## remove this to commit your changes
+### remove this to commit your changes ###
 src/
