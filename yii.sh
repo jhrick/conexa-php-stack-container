@@ -1,8 +1,6 @@
 #!/bin/bash
 read -p "Enter project name: " app_name
 
-if [ -z "$( ls -A '/var/www/html/yii/framework' )" ]; then
-  mv /var/www/html/framework /var/www/html/yii/framework
-fi
+export YII="/usr/local/lib/yii"
 
-php yii/framework/yiic.php webapp WebRoot/$app_name
+/usr/local/bin/php $YII/framework/yiic.php webapp WebRoot/"$app_name"

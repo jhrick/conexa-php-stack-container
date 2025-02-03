@@ -6,5 +6,5 @@ services:
     ports:
       - "9000:80"
     volumes:
-      - ./src:/var/www/html/WebRoot:rw
-      - ./yii:/var/www/html/yii:ro
+      - ./app:/var/www/html/WebRoot:rw
+      - ${YII}:/usr/local/lib/yii:ro

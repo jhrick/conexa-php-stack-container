@@ -16,6 +16,7 @@ COPY 000-default.conf /etc/apache2/sites-available/
 COPY yii.sh /usr/bin/
 RUN chmod +x /usr/bin/yii.sh
 RUN echo "alias yii=yii.sh" >> ~/.bashrc
+RUN export YII=/usr/local/lib/yii/
 
 RUN a2enmod rewrite
 
