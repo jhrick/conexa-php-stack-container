@@ -16,7 +16,6 @@ if [ -z "$image" ]; then
 else
   docker run \
     -v ./:/var/www/html/WebRoot \
-    -v $YII:/usr/local/lib/yii \
     -it $image \
     bash
 fi
